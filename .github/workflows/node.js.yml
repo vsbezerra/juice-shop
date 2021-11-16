@@ -21,10 +21,10 @@ jobs:
       with:
           node-version: 14
           cache: 'npm'
-    - run: npm ci
-#           npm install -g @angular/cli
-#           npm install --ignore-scripts
-#           cd frontend
-#           npm install --ignore-scripts
+    - run: |
+          npm install -g @angular/cli
+          npm install --ignore-scripts
+          cd frontend
+          npm install --ignore-scripts
     - run: npm run build --if-present
     - run: npm test --if-present
