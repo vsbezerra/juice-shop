@@ -36,9 +36,19 @@ jobs:
           echo test, and deploy your project.
   job2:  
     runs-on: windows-latest
-  
+
     steps:
      
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: echo Hello, world windows!
+        
+  job3:  
+    runs-on: ubuntu-latest
+    needs:
+        - job1
+        - job2
+    steps:
+     
+      - name: Imprime 'Hello World'
+        run: echo Hello, world final!
